@@ -2,7 +2,6 @@ package cn.com.schedule.common;
 
 import cn.com.schedule.common.timer.Jdk1_5TimerTask;
 import cn.com.schedule.common.timer.JdkTimerTask;
-import com.alibaba.fastjson.JSON;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -43,6 +42,20 @@ class CommonApplicationTests {
         scheduledExecutorService.scheduleWithFixedDelay(new Jdk1_5TimerTask(5,"scheduleWithFixedDelay"),10,1,TimeUnit.SECONDS);
 //        log.info("scheduledExecutorService:{}", JSON.toJSONString(scheduleAtFixedRate.get()));
         TimeUnit.MINUTES.sleep(2);
+    }
+
+
+    @Test
+    public void testSpringQuartz() throws Exception {
+        //设置JobDetail
+
+        //设置Trigger
+
+
+
+        TimeUnit.MINUTES.sleep(2);
+
+
     }
 
 }

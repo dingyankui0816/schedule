@@ -18,7 +18,7 @@ import java.util.concurrent.TimeUnit;
 @Component
 public class SpringSchedule {
 
-    @Scheduled(cron = "0/1 * * * * ? ")
+//    @Scheduled(cron = "0/1 * * * * ? ")
     public void scheduleTestA(){
 
         Date now = new Date();
@@ -32,7 +32,7 @@ public class SpringSchedule {
         log.info("------------------------- {} Task End scheduleTestA -----------------------",Thread.currentThread().getName());
     }
 
-    @Scheduled(cron = "0/1 * * * * ? ")
+//    @Scheduled(cron = "0/1 * * * * ? ")
     public void scheduleTestB(){
 
         Date now = new Date();
