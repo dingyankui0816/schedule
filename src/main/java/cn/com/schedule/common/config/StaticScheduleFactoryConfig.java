@@ -10,17 +10,18 @@ import org.springframework.scheduling.quartz.SimpleTriggerFactoryBean;
 import java.util.*;
 
 /**
- * @DESC: 定时任务配置
+ * @DESC: 定时任务配置 静态定时任务
  * @Auther: Levi.Ding
  * @Date: 2020/12/7 9:32
  */
 @Configuration
-public class ScheduleFactoryConfig {
-    @Bean
+public class StaticScheduleFactoryConfig {
+
+    @Bean(name = "staticSchedulerFactoryBean")
     public SchedulerFactoryBean getSchedulerFactoryBean(JobDetailFactoryBean jobDetailFactoryBean, SimpleTriggerFactoryBean simpleTriggerFactoryBean){
         SchedulerFactoryBean schedulerFactoryBean = new SchedulerFactoryBean();
-        schedulerFactoryBean.setJobDetails(jobDetailFactoryBean.getObject());
-        schedulerFactoryBean.setTriggers(simpleTriggerFactoryBean.getObject());
+//        schedulerFactoryBean.setJobDetails(jobDetailFactoryBean.getObject());
+//        schedulerFactoryBean.setTriggers(simpleTriggerFactoryBean.getObject());
         schedulerFactoryBean.setAutoStartup(true);
         return schedulerFactoryBean;
     }

@@ -1,6 +1,7 @@
 package cn.com.schedule.common.model;
 
 import cn.com.schedule.common.constant.JobTypeEnum;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import java.math.BigInteger;
 import java.util.List;
@@ -33,6 +34,12 @@ public class InstanceModel {
      * 触发器编号
      */
     private List<BigInteger> triggerIds;
+
+    /**
+     * 触发器列表
+     */
+    @JsonIgnore
+    private List<TriggerModel> triggerModels;
 
     public BigInteger getId() {
         return id;
@@ -74,7 +81,15 @@ public class InstanceModel {
         this.triggerIds = triggerIds;
     }
 
-    public InstanceModel(BigInteger id, String name, String executeContent, JobTypeEnum jobTypeEnum,List<BigInteger> triggerIds) {
+    public List<TriggerModel> getTriggerModels() {
+        return triggerModels;
+    }
+
+    public void setTriggerModels(List<TriggerModel> triggerModels) {
+        this.triggerModels = triggerModels;
+    }
+
+    public InstanceModel(BigInteger id, String name, String executeContent, JobTypeEnum jobTypeEnum, List<BigInteger> triggerIds) {
         this.id = id;
         this.name = name;
         this.executeContent = executeContent;
