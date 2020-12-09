@@ -30,17 +30,6 @@ public class InstanceModel {
      */
     private JobTypeEnum jobTypeEnum;
 
-    /**
-     * 触发器编号
-     */
-    private List<BigInteger> triggerIds;
-
-    /**
-     * 触发器列表
-     */
-    @JsonIgnore
-    private List<TriggerModel> triggerModels;
-
     public BigInteger getId() {
         return id;
     }
@@ -73,28 +62,11 @@ public class InstanceModel {
         this.jobTypeEnum = jobTypeEnum;
     }
 
-    public List<BigInteger> getTriggerIds() {
-        return triggerIds;
-    }
-
-    public void setTriggerIds(List<BigInteger> triggerIds) {
-        this.triggerIds = triggerIds;
-    }
-
-    public List<TriggerModel> getTriggerModels() {
-        return triggerModels;
-    }
-
-    public void setTriggerModels(List<TriggerModel> triggerModels) {
-        this.triggerModels = triggerModels;
-    }
-
-    public InstanceModel(BigInteger id, String name, String executeContent, JobTypeEnum jobTypeEnum, List<BigInteger> triggerIds) {
+    public InstanceModel(BigInteger id, String name, String executeContent, JobTypeEnum jobTypeEnum) {
         this.id = id;
         this.name = name;
         this.executeContent = executeContent;
         this.jobTypeEnum = jobTypeEnum;
-        this.triggerIds = triggerIds;
     }
 
     public InstanceModel() {

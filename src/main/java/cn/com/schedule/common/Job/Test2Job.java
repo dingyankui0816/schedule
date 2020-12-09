@@ -19,11 +19,8 @@ import org.springframework.stereotype.Component;
 @Scope(value = ConfigurableBeanFactory.SCOPE_PROTOTYPE)
 public class Test2Job extends AbstractJob {
     @Override
-    protected void executeInternal(JobExecutionContext context) {
-        if (this.instanceModel == null) {
-            this.instanceModel = (InstanceModel) context.get("instanceModel");
-        }
-        log.info("Test2Job ---- {}", JSON.toJSONString(instanceModel));
+    protected void executeSubJob() {
+        log.info("Test2Job ---- {}", JSON.toJSONString(instanceMapModel));
     }
 
     @Override

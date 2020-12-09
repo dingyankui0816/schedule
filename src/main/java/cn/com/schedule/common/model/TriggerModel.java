@@ -1,5 +1,8 @@
 package cn.com.schedule.common.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.math.BigInteger;
 import java.util.Date;
 import java.util.List;
@@ -19,6 +22,7 @@ public class TriggerModel {
     /**
      * 第一次触发时间
      */
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date startTime;
     /**
      * 触发总数
@@ -30,14 +34,15 @@ public class TriggerModel {
     private Long delay;
 
     /**
-     * 已执行次数
-     */
-    private Integer executeCount;
-
-    /**
      * 执行状态 1、未开始 2、进行中 3、已结束
      */
     private Integer status;
+
+    /**
+     * 结束时间
+     */
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    private Date endTime;
 
     public BigInteger getId() {
         return id;
@@ -79,14 +84,6 @@ public class TriggerModel {
         this.delay = delay;
     }
 
-    public Integer getExecuteCount() {
-        return executeCount;
-    }
-
-    public void setExecuteCount(Integer executeCount) {
-        this.executeCount = executeCount;
-    }
-
     public Integer getStatus() {
         return status;
     }
@@ -95,15 +92,22 @@ public class TriggerModel {
         this.status = status;
     }
 
+    public Date getEndTime() {
+        return endTime;
+    }
 
-    public TriggerModel(BigInteger id, String name, Date startTime, Integer count, Long delay, Integer executeCount, Integer status) {
+    public void setEndTime(Date endTime) {
+        this.endTime = endTime;
+    }
+
+    public TriggerModel(BigInteger id, String name, Date startTime, Integer count, Long delay, Integer status, Date endTime) {
         this.id = id;
         this.name = name;
         this.startTime = startTime;
         this.count = count;
         this.delay = delay;
-        this.executeCount = executeCount;
         this.status = status;
+        this.endTime = endTime;
     }
 
     public TriggerModel() {
