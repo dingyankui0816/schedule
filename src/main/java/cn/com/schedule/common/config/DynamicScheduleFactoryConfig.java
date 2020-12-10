@@ -9,9 +9,7 @@ import com.google.common.collect.Maps;
 import lombok.extern.slf4j.Slf4j;
 import org.quartz.*;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.autoconfigure.quartz.QuartzProperties;
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.scheduling.quartz.SchedulerFactoryBean;
@@ -160,10 +158,8 @@ public class DynamicScheduleFactoryConfig {
         }
         SimpleScheduleBuilder simpleScheduleBuilder = SimpleScheduleBuilder.simpleSchedule()
                 .withIntervalInMilliseconds(triggerModel.getDelay());
-        //获取当前剩余需要执行的次数
-        if (count != -1) {
-            simpleScheduleBuilder.withRepeatCount(count);
-        }
+        //获取当前剩余需要执行的次数    -1:一直执行
+        simpleScheduleBuilder.withRepeatCount(count);
 
         return TriggerBuilder.newTrigger()
                 .forJob(jobDetail)

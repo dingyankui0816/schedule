@@ -26,8 +26,8 @@ public class Test1Job extends AbstractJob {
     @Override
     protected void executeSubJob() {
         log.info("----------------------Test1Job start-------------------------------");
-        log.info("Test1Job ---- {}", JSON.toJSONString(instanceMapModel.getInstanceId()));
-        log.info("Test1Job ---- {}", JSON.toJSONString(instanceMapModel.getTriggerId()));
+        log.info("Test1Job ---- {}", JSON.toJSONString(instanceMapModel.getInstanceModel()));
+        log.info("Test1Job ---- {}", JSON.toJSONString(instanceMapModel.getTriggerModel()));
         log.info("----------------------Test1Job end---------------------------------");
     }
 

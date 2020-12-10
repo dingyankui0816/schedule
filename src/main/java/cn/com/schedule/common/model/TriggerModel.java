@@ -22,6 +22,7 @@ public class TriggerModel {
     /**
      * 第一次触发时间
      */
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date startTime;
     /**

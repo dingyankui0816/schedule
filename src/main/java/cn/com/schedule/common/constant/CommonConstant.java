@@ -56,9 +56,9 @@ public class CommonConstant {
 //        instanceModels.add(new InstanceModel(BigInteger.valueOf(3),"实例_3","执行实例_3",JobTypeEnum.TEST_1,Lists.newArrayList(BigInteger.valueOf(1),BigInteger.valueOf(2),BigInteger.valueOf(3))));
 //        instanceModels.add(new InstanceModel(BigInteger.valueOf(4),"实例_4","执行实例_4",JobTypeEnum.TEST_2,Lists.newArrayList(BigInteger.valueOf(1),BigInteger.valueOf(2),BigInteger.valueOf(3))));
 //        instanceModels.add(new InstanceModel(BigInteger.valueOf(5),"实例_5","执行实例_5",JobTypeEnum.TEST_2,Lists.newArrayList(BigInteger.valueOf(1),BigInteger.valueOf(2),BigInteger.valueOf(3))));
-        instanceMapModels.add(new InstanceMapModel(BigInteger.valueOf(1),BigInteger.valueOf(1),BigInteger.valueOf(2),3));
+//        instanceMapModels.add(new InstanceMapModel(BigInteger.valueOf(1),BigInteger.valueOf(1),BigInteger.valueOf(2),3));
         try {
-            triggerModels.add(new TriggerModel(BigInteger.valueOf(1),"触发器_1",CommonConstant.FAST_DATE_FORMAT.parse("2020-12-07 12:00:00"),10,2000L,1, DateUtil.calDateAddOneSecond(CommonConstant.FAST_DATE_FORMAT.parse("2020-12-07 12:00:00"),9,2000L)));
+            triggerModels.add(new TriggerModel(BigInteger.valueOf(1),"触发器_1",CommonConstant.FAST_DATE_FORMAT.parse("2020-12-10 12:00:00"),-1,2000L,1, null));
             triggerModels.add(new TriggerModel(BigInteger.valueOf(2),"触发器_2",CommonConstant.FAST_DATE_FORMAT.parse("2020-12-07 16:00:00"),-1,2000L,1,null));
             triggerModels.add(new TriggerModel(BigInteger.valueOf(3),"触发器_3",CommonConstant.FAST_DATE_FORMAT.parse("2020-12-09 11:08:00"),10,2000L,2, DateUtil.calDateAddOneSecond(CommonConstant.FAST_DATE_FORMAT.parse("2020-12-09 11:08:00"),9,2000L)));
         } catch (ParseException e) {

@@ -1,17 +1,25 @@
 package cn.com.schedule.common;
 
+import cn.com.schedule.common.constant.CommonConstant;
+import cn.com.schedule.common.model.InstanceMapModel;
+import cn.com.schedule.common.service.ScheduleService;
 import cn.com.schedule.common.timer.Jdk1_5TimerTask;
 import cn.com.schedule.common.timer.JdkTimerTask;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.math.BigInteger;
 import java.util.Timer;
 import java.util.concurrent.*;
 
 @Slf4j
 @SpringBootTest
 class CommonApplicationTests {
+
+    @Autowired
+    private ScheduleService scheduleService;
 
     @Test
     void contextLoads() {
@@ -56,6 +64,19 @@ class CommonApplicationTests {
         TimeUnit.MINUTES.sleep(2);
 
 
+    }
+
+    @Test
+    public void testSpringQuartzAdd() throws InterruptedException {
+        InstanceMapModel instanceMapModel = new InstanceMapModel(new BigInteger("2"),new BigInteger("1"),new BigInteger("1"),0);
+        instanceMapModel.setInstanceModel(CommonConstant.instanceModels.get(0));
+        instanceMapModel.setTriggerModel(CommonConstant.triggerModels.get(0));
+        log.info("add instance ------------- start");
+        scheduleService.addInstanceMapModel(instanceMapModel);
+        TimeUnit.MINUTES.sleep(1);
+        log.info("delete instance ----------- end");
+        scheduleService.deleteTrigger(new BigInteger("1"));
+        TimeUnit.MINUTES.sleep(1);
     }
 
 }
