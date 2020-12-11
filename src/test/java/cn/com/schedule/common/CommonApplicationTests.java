@@ -1,8 +1,8 @@
 package cn.com.schedule.common;
 
 import cn.com.schedule.common.constant.CommonConstant;
-import cn.com.schedule.common.model.InstanceMapModel;
-import cn.com.schedule.common.service.ScheduleService;
+import cn.com.schedule.common.springQuartz.model.InstanceMapModel;
+import cn.com.schedule.common.springQuartz.service.ScheduleService;
 import cn.com.schedule.common.timer.Jdk1_5TimerTask;
 import cn.com.schedule.common.timer.JdkTimerTask;
 import lombok.extern.slf4j.Slf4j;

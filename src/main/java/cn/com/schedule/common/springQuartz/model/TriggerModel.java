@@ -1,11 +1,10 @@
-package cn.com.schedule.common.model;
+package cn.com.schedule.common.springQuartz.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.math.BigInteger;
 import java.util.Date;
-import java.util.List;
 
 /**
  * @DESC: 触发器 model

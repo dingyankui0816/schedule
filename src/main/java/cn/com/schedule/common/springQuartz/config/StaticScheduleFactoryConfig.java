@@ -1,6 +1,6 @@
-package cn.com.schedule.common.config;
+package cn.com.schedule.common.springQuartz.config;
 
-import cn.com.schedule.common.Job.Test1Job;
+import cn.com.schedule.common.springQuartz.job.Test1Job;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.scheduling.quartz.JobDetailFactoryBean;

@@ -1,7 +1,7 @@
 package cn.com.schedule.common.constant;
 
-import cn.com.schedule.common.Job.Test1Job;
-import cn.com.schedule.common.Job.Test2Job;
+import cn.com.schedule.common.springQuartz.job.Test1Job;
+import cn.com.schedule.common.springQuartz.job.Test2Job;
 import org.quartz.Job;
 
 /**

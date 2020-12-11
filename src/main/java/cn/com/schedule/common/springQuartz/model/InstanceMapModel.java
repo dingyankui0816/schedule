@@ -1,4 +1,4 @@
-package cn.com.schedule.common.model;
+package cn.com.schedule.common.springQuartz.model;
 
 import java.math.BigInteger;
 

@@ -1,17 +1,15 @@
-package cn.com.schedule.common.service;
+package cn.com.schedule.common.springQuartz.service;
 
-import cn.com.schedule.common.config.DynamicScheduleFactoryConfig;
+import cn.com.schedule.common.springQuartz.config.DynamicScheduleFactoryConfig;
 import cn.com.schedule.common.constant.CommonConstant;
-import cn.com.schedule.common.model.InstanceMapModel;
-import cn.com.schedule.common.model.InstanceModel;
-import cn.com.schedule.common.model.TriggerModel;
+import cn.com.schedule.common.springQuartz.model.InstanceMapModel;
+import cn.com.schedule.common.springQuartz.model.TriggerModel;
 import lombok.extern.slf4j.Slf4j;
 import org.quartz.JobDetail;
 import org.quartz.Scheduler;
 import org.quartz.SchedulerException;
 import org.quartz.TriggerKey;
 import org.springframework.stereotype.Service;
-import org.springframework.util.CollectionUtils;
 
 import javax.annotation.Resource;
 import java.math.BigInteger;
@@ -36,7 +34,7 @@ public class ScheduleService {
      * @Auther: Levi.Ding
      * @Date:   2020/12/8  16:25
      * @param
-     * @return: java.util.List<cn.com.schedule.common.model.InstanceModel>
+     * @return: java.util.List<cn.com.schedule.common.springQuartz.model.InstanceModel>
      */
     public List<InstanceMapModel> getJdbcInstanceModels() {
         //实例列表
@@ -113,7 +111,7 @@ public class ScheduleService {
      * @Auther: Levi.Ding
      * @Date:   2020/12/9  10:33
      * @param triggerModel
-     * @return: cn.com.schedule.common.model.TriggerModel
+     * @return: cn.com.schedule.common.springQuartz.model.TriggerModel
      */
     public TriggerModel refreshTriggerStatus(TriggerModel triggerModel) {
         int calStatus = this.getTriggerStatus(triggerModel);

@@ -1,10 +1,8 @@
-package cn.com.schedule.common.model;
+package cn.com.schedule.common.springQuartz.model;
 
 import cn.com.schedule.common.constant.JobTypeEnum;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import java.math.BigInteger;
-import java.util.List;
 
 /**
  * @DESC: 实际执行 model

@@ -1,8 +1,8 @@
 package cn.com.schedule.common.constant;
 
-import cn.com.schedule.common.model.InstanceMapModel;
-import cn.com.schedule.common.model.InstanceModel;
-import cn.com.schedule.common.model.TriggerModel;
+import cn.com.schedule.common.springQuartz.model.InstanceMapModel;
+import cn.com.schedule.common.springQuartz.model.InstanceModel;
+import cn.com.schedule.common.springQuartz.model.TriggerModel;
 import cn.com.schedule.common.util.DateUtil;
 import com.google.common.collect.Lists;
 import org.apache.commons.lang3.time.FastDateFormat;

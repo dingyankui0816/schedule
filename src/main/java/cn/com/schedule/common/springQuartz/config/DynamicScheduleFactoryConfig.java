@@ -1,10 +1,10 @@
-package cn.com.schedule.common.config;
+package cn.com.schedule.common.springQuartz.config;
 
 import cn.com.schedule.common.constant.CommonConstant;
-import cn.com.schedule.common.model.InstanceMapModel;
-import cn.com.schedule.common.model.InstanceModel;
-import cn.com.schedule.common.model.TriggerModel;
-import cn.com.schedule.common.service.ScheduleService;
+import cn.com.schedule.common.springQuartz.model.InstanceMapModel;
+import cn.com.schedule.common.springQuartz.model.InstanceModel;
+import cn.com.schedule.common.springQuartz.model.TriggerModel;
+import cn.com.schedule.common.springQuartz.service.ScheduleService;
 import com.google.common.collect.Maps;
 import lombok.extern.slf4j.Slf4j;
 import org.quartz.*;

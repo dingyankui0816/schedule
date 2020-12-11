@@ -1,14 +1,11 @@
-package cn.com.schedule.common.Job;
+package cn.com.schedule.common.springQuartz.job;
 
 import cn.com.schedule.common.constant.JobTypeEnum;
-import cn.com.schedule.common.model.InstanceModel;
 import com.alibaba.fastjson.JSON;
 import lombok.extern.slf4j.Slf4j;
 import org.quartz.DisallowConcurrentExecution;
-import org.quartz.JobExecutionContext;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.Scope;
-import org.springframework.scheduling.quartz.QuartzJobBean;
 import org.springframework.stereotype.Component;
 
 /**

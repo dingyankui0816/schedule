@@ -1,10 +1,10 @@
-package cn.com.schedule.common.Job;
+package cn.com.schedule.common.springQuartz.job;
 
 import cn.com.schedule.common.constant.CommonConstant;
 import cn.com.schedule.common.constant.JobTypeEnum;
-import cn.com.schedule.common.model.InstanceMapModel;
-import cn.com.schedule.common.model.TriggerModel;
-import cn.com.schedule.common.service.ScheduleService;
+import cn.com.schedule.common.springQuartz.model.InstanceMapModel;
+import cn.com.schedule.common.springQuartz.model.TriggerModel;
+import cn.com.schedule.common.springQuartz.service.ScheduleService;
 import cn.com.schedule.common.util.SpringUtil;
 import com.alibaba.fastjson.JSON;
 import lombok.extern.slf4j.Slf4j;
