@@ -1,6 +1,8 @@
 package cn.com.schedule.common;
 
 import cn.com.schedule.common.constant.CommonConstant;
+import cn.com.schedule.common.elasticJob.job.DynamicJob;
+import cn.com.schedule.common.elasticJob.service.JobOperationService;
 import cn.com.schedule.common.springQuartz.model.InstanceMapModel;
 import cn.com.schedule.common.springQuartz.service.ScheduleService;
 import cn.com.schedule.common.timer.Jdk1_5TimerTask;
@@ -77,6 +79,26 @@ class CommonApplicationTests {
         log.info("delete instance ----------- end");
         scheduleService.deleteTrigger(new BigInteger("1"));
         TimeUnit.MINUTES.sleep(1);
+    }
+
+    @Autowired
+    private JobOperationService jobOperationService;
+
+    @Autowired
+    private DynamicJob dynamicJob;
+
+    /**
+     * @DESC: 未实现多节点job自动同步的功能
+     * @Auther: Levi.Ding
+     * @Date:   2020/12/14  15:35
+     * @param
+     * @return: void
+     */
+    @Test
+    public void testElasticJob() throws InterruptedException {
+        jobOperationService.addjobs("test-1",dynamicJob,"0/10 * * * * ?",1,"1=A");
+
+        TimeUnit.MINUTES.sleep(3);
     }
 
 }
