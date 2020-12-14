@@ -31,24 +31,6 @@ import java.util.stream.Collectors;
 @Configuration
 public class DynamicScheduleFactoryConfig {
 
-    @Bean(name = "dynamicScheduleFactory")
-    public SchedulerFactoryBean getDynamicScheduleFactory(QuartzProperties properties){
-        SchedulerFactoryBean schedulerFactoryBean = new SchedulerFactoryBean();
-        if (properties.getSchedulerName() != null) {
-            schedulerFactoryBean.setSchedulerName(properties.getSchedulerName());
-        }
-        schedulerFactoryBean.setAutoStartup(properties.isAutoStartup());
-        schedulerFactoryBean.setStartupDelay((int) properties.getStartupDelay().getSeconds());
-        schedulerFactoryBean.setWaitForJobsToCompleteOnShutdown(properties.isWaitForJobsToCompleteOnShutdown());
-        schedulerFactoryBean.setOverwriteExistingJobs(properties.isOverwriteExistingJobs());
-        if (!properties.getProperties().isEmpty()) {
-            Properties ps = new Properties();
-            ps.putAll(properties.getProperties());
-            schedulerFactoryBean.setQuartzProperties(ps);
-        }
-        return schedulerFactoryBean;
-    }
-
     @Resource(name = "dynamicScheduleFactory")
     private Scheduler scheduler ;
 

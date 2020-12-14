@@ -1,6 +1,7 @@
 package cn.com.schedule.common.springQuartz.config;
 
 import cn.com.schedule.common.springQuartz.job.Test1Job;
+import org.springframework.boot.autoconfigure.quartz.QuartzProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.scheduling.quartz.JobDetailFactoryBean;
@@ -15,7 +16,7 @@ import java.util.*;
  * @Date: 2020/12/7 9:32
  */
 @Configuration
-public class StaticScheduleFactoryConfig {
+public class ScheduleFactoryConfig {
 
     @Bean(name = "staticSchedulerFactoryBean")
     public SchedulerFactoryBean getSchedulerFactoryBean(JobDetailFactoryBean jobDetailFactoryBean, SimpleTriggerFactoryBean simpleTriggerFactoryBean){
@@ -25,6 +26,26 @@ public class StaticScheduleFactoryConfig {
         schedulerFactoryBean.setAutoStartup(true);
         return schedulerFactoryBean;
     }
+
+
+    @Bean(name = "dynamicScheduleFactory")
+    public SchedulerFactoryBean getDynamicScheduleFactory(QuartzProperties properties){
+        SchedulerFactoryBean schedulerFactoryBean = new SchedulerFactoryBean();
+        if (properties.getSchedulerName() != null) {
+            schedulerFactoryBean.setSchedulerName(properties.getSchedulerName());
+        }
+        schedulerFactoryBean.setAutoStartup(properties.isAutoStartup());
+        schedulerFactoryBean.setStartupDelay((int) properties.getStartupDelay().getSeconds());
+        schedulerFactoryBean.setWaitForJobsToCompleteOnShutdown(properties.isWaitForJobsToCompleteOnShutdown());
+        schedulerFactoryBean.setOverwriteExistingJobs(properties.isOverwriteExistingJobs());
+        if (!properties.getProperties().isEmpty()) {
+            Properties ps = new Properties();
+            ps.putAll(properties.getProperties());
+            schedulerFactoryBean.setQuartzProperties(ps);
+        }
+        return schedulerFactoryBean;
+    }
+
 
     @Bean
     public JobDetailFactoryBean jobDetailFactoryBean(){

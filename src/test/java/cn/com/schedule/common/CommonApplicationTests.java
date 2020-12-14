@@ -25,7 +25,7 @@ class CommonApplicationTests {
     void contextLoads() {
     }
 
-    @Test
+//    @Test
     public void testJdkTimer() throws InterruptedException {
         Timer timer = new Timer();
         log.info("start jdk timer");
@@ -37,7 +37,7 @@ class CommonApplicationTests {
         TimeUnit.MINUTES.sleep(1);
     }
 
-    @Test
+//    @Test
     public void testJdk1_5Scheduled() throws InterruptedException, ExecutionException {
         //Thread Pool Num ScheduledThreadPoolExecutor
         //thread stop eg. scheduledExecutorService.shutdown();
@@ -53,7 +53,7 @@ class CommonApplicationTests {
     }
 
 
-    @Test
+//    @Test
     public void testSpringQuartz() throws Exception {
         //设置JobDetail
 
@@ -66,7 +66,7 @@ class CommonApplicationTests {
 
     }
 
-    @Test
+//    @Test
     public void testSpringQuartzAdd() throws InterruptedException {
         InstanceMapModel instanceMapModel = new InstanceMapModel(new BigInteger("2"),new BigInteger("1"),new BigInteger("1"),0);
         instanceMapModel.setInstanceModel(CommonConstant.instanceModels.get(0));

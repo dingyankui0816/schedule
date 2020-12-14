@@ -16,7 +16,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
  */
 @EnableScheduling
 @SpringBootApplication
-@ImportResource("applicationContext.xml")
+@ImportResource("classpath:applicationContext.xml")
 public class CommonApplication {
 
     public static void main(String[] args) {
