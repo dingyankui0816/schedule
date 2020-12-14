@@ -88,7 +88,7 @@ class CommonApplicationTests {
     private DynamicJob dynamicJob;
 
     /**
-     * @DESC: 未实现多节点job自动同步的功能
+     * @DESC: 未实现多节点job自动同步的功能, gitHub中有人实现了当前功能 : https://github.com/yinjihuan/elastic-job-spring-boot-starter
      * @Auther: Levi.Ding
      * @Date:   2020/12/14  15:35
      * @param
