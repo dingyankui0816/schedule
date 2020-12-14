@@ -10,11 +10,12 @@
                         http://www.dangdang.com/schema/ddframe/job
                         http://www.dangdang.com/schema/ddframe/job/job.xsd
                         ">
-    <!--    官方文档: https://www.cnblogs.com/sherrykid/p/5813148.html   -->
+    <!-- zookeeper 搭建教程 : https://www.cnblogs.com/LUA123/p/11428113.html-->
     <!--配置作业注册中心 我的zookeeper是集群模式所以三个节点ip地址 -->
     <reg:zookeeper id="regCenter" server-lists="172.27.144.185:2181,172.27.144.185:2182,172.27.144.185:2183" namespace="levi-job"
                    base-sleep-time-milliseconds="1000" max-sleep-time-milliseconds="3000" max-retries="3" />
 
+    <!--    官方文档: https://www.cnblogs.com/sherrykid/p/5813148.html   -->
     <!-- 配置作业-->
     <job:simple id="mySimpleJob_1" class="cn.com.schedule.common.elasticJob.job.MySimpleJob" registry-center-ref="regCenter"
                 cron="0/10 * * * * ?" sharding-total-count="1" job-sharding-strategy-class="com.dangdang.ddframe.job.lite.api.strategy.impl.AverageAllocationJobShardingStrategy"
