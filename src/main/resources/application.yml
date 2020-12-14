@@ -10,3 +10,5 @@ spring:
         size: 10
 logging:
   config: classpath:logback/logback-spring-dev.xml
+server:
+  port: 8001

@@ -17,8 +17,11 @@
 
     <!-- 配置作业-->
     <job:simple id="mySimpleJob_1" class="cn.com.schedule.common.elasticJob.job.MySimpleJob" registry-center-ref="regCenter"
-                cron="0/10 * * * * ?" sharding-total-count="1" sharding-item-parameters="0=A" />
+                cron="0/10 * * * * ?" sharding-total-count="3" sharding-item-parameters="0=A" job-sharding-strategy-class="com.dangdang.ddframe.job.lite.api.strategy.impl.AverageAllocationJobShardingStrategy"
+                overwrite="true"  />
+
     <!-- 配置作业-->
     <job:simple id="mySimpleJob_2" class="cn.com.schedule.common.elasticJob.job.MySimpleJob" registry-center-ref="regCenter"
-                cron="0/10 * * * * ?" sharding-total-count="1" sharding-item-parameters="0=A" />
+                cron="0/10 * * * * ?" sharding-total-count="3" sharding-item-parameters="1=B" job-sharding-strategy-class="com.dangdang.ddframe.job.lite.api.strategy.impl.AverageAllocationJobShardingStrategy"
+                overwrite="true"  />
 </beans>

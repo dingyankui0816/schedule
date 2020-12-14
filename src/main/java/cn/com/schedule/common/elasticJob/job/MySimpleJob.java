@@ -13,7 +13,7 @@ import lombok.extern.slf4j.Slf4j;
 public class MySimpleJob implements SimpleJob {
     @Override
     public void execute(ShardingContext shardingContext) {
-        log.info("------- Thread Id : {}, 任务总分片 : {}, 当前分片项 : {}",Thread.currentThread().getId()
-                ,shardingContext.getShardingTotalCount(),shardingContext.getShardingItem());
+        log.info("------- Thread Id : {}, 任务总分片 : {}, 当前分片项 : {}, 当前分片参数 : {}",Thread.currentThread().getId()
+                ,shardingContext.getShardingTotalCount(),shardingContext.getShardingItem(),shardingContext.getShardingParameter());
     }
 }
