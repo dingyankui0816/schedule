@@ -81,7 +81,7 @@ class CommonApplicationTests {
         TimeUnit.MINUTES.sleep(1);
     }
 
-    @Autowired
+//    @Autowired
     private JobOperationService jobOperationService;
 
     @Autowired

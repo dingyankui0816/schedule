@@ -16,7 +16,7 @@ import org.springframework.stereotype.Service;
  * @Auther: Levi.Ding
  * @Date: 2020/12/14 14:24
  */
-@Service
+//@Service
 public class JobOperationService {
 
     @Autowired
